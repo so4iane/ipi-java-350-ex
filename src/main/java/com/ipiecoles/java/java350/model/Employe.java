@@ -79,6 +79,7 @@ public class Employe {
      * @return le nombre de jour RTT sur l'année concernée;
      */
     public Integer getNbRtt(LocalDate date){
+        logger.info("Calcul du nombre de RTT de l'année {} pour le salarié matriculé {}",date.getYear(),this.getMatricule());
         //Calcul du nombre de jour dans l'année (selon bisextile)
         int nbJAnnee = date.isLeapYear() ? 366 : 365;
 
