@@ -15,8 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.persistence.EntityExistsException;
 
-import static com.sun.javaws.JnlpxArgs.verify;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)

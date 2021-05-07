@@ -1,0 +1,6 @@
+​​​​10:26:07​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStarting                    - Starting Java350Application on LH0MLPF1C4WRL with PID 1820 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+​​​​10:26:07​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+​​​​10:26:09​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStarted                     - Started Java350Application in 2.018 seconds (JVM running for 2.819)
+10:27:59 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStarting                    - Starting Java350Application on LH0MLPF1C4WRL with PID 12800 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+10:28:00 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+10:28:02 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStarted                     - Started Java350Application in 2.382 seconds (JVM running for 3.263)

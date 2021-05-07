@@ -1,6 +1,14 @@
-​​​​10:26:07​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStarting                    - Starting Java350Application on LH0MLPF1C4WRL with PID 1820 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
-​​​​10:26:07​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStartupProfileInfo          - No active profile set, falling back to default profiles: default
-​​​​10:26:09​​​​ [main] INFO  com.ipiecoles.java.java350.Java350Application     ​​​​.logStarted                     - Started Java350Application in 2.018 seconds (JVM running for 2.819)
-10:27:59 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStarting                    - Starting Java350Application on LH0MLPF1C4WRL with PID 12800 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
-10:28:00 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
-10:28:02 [main] INFO  com.ipiecoles.java.java350.Java350Application     .logStarted                     - Started Java350Application in 2.382 seconds (JVM running for 3.263)
+08:40:09 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarting                    - Starting EmployeRepositoryTest on LH0MLPF1C4WRL with PID 15244 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+08:40:09 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+08:40:15 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarted                     - Started EmployeRepositoryTest in 6.434 seconds (JVM running for 9.033)
+08:40:15 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarting                    - Starting EmployeServiceIntegrationTest on LH0MLPF1C4WRL with PID 15244 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+08:40:15 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+08:40:17 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarted                     - Started EmployeServiceIntegrationTest in 1.506 seconds (JVM running for 10.943)
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de MANAGER avec un taux d'activit� de 1.0
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de MANAGER avec un taux d'activit� de 0.5
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activit� de 1.0
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activit� de 1.0
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de MANAGER avec un taux d'activit� de 0.5
+08:40:17 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
+08:40:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - D�but d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activit� de 1.0
+08:40:17 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employ� de matricule T12345 existe d�j� en BDD
