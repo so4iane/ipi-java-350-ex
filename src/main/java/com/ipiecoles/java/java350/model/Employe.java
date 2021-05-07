@@ -1,5 +1,9 @@
 package com.ipiecoles.java.java350.model;
 
+import com.ipiecoles.java.java350.exception.EmployeException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +14,7 @@ import java.util.Objects;
 
 @Entity
 public class Employe {
-
+    private static final Logger logger = LoggerFactory.getLogger(Employe.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -112,8 +116,34 @@ case SATURDAY:var = var + 1;
         return prime * this.tempsPartiel;
     }
 
+    /**
+     * Calcul de l'augmentation salaire selon la règle :
+     * Un chiffre entre 0 et 50 est entré en paramètre et correspond à l'augmentation en % du salaire
+     * Aucune augmentation ne peut-être supérieure à 50%, nulle ou négative
+     *
+     * Cette fonction renvoie le multiplicateur du salaire qui doit correspondre à l'augmentation
+     * Ex : si pourcentage = 30, alors la fonction reverra (100+30)/100 = 1,3
+     *
+     * @param pourcentage le pourcentage duquel on souhaite augmenter l'employé
+     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
+     * @return le mutipliateur d'augmentation;
+     */
     //Augmenter salaire
-    //public void augmenterSalaire(double pourcentage){}
+    public double augmenterSalaire(double pourcentage) throws EmployeException {
+        //Vérification de la validité de pourcentage
+        if(pourcentage<=0D){
+            logger.error("Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!");
+            throw new EmployeException("Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!");
+        }else if(50D<pourcentage){
+            logger.error("Le pourcentage d'augmentation doit être inférieur ou égal à 50!");
+            throw new EmployeException("Le pourcentage d'augmentation doit être inférieur ou égal à 50!");
+        }
+
+        //Calcul du multiplicateur d'augmentation
+         pourcentage = (100+pourcentage)/100;
+
+        return pourcentage;
+    }
 
     public Long getId() {
         return id;

@@ -26,3 +26,5 @@
 08:45:47 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
 08:45:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
 08:45:48 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD
+09:36:43 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit Ãªtre supÃ©rieur Ã  0 et ne peut-Ãªtre nÃ©gatif!
+09:36:51 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit Ãªtre infÃ©rieur ou Ã©gal Ã  50!

@@ -293,3 +293,5 @@ ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback
 08:45:48 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl .perform                        - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 08:45:48 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                .close                          - HikariPool-1 - Shutdown initiated...
 08:45:48 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                .close                          - HikariPool-1 - Shutdown completed.
+09:36:43 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!
+09:36:51 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être inférieur ou égal à 50!

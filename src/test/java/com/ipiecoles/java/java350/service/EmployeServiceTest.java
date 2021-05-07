@@ -57,7 +57,7 @@ class EmployeServiceTest {
     }
 
     @Test
-    void embaucheNewEmployeTechnicienCapTempsPleinNoLastMateicule() throws EmployeException {
+    void embaucheNewEmployeTechnicienCapTempsPleinNoLastMatricule() throws EmployeException {
         //Given
         String prenom = "Jean";
         String nom = "Neymar";

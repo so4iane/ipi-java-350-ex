@@ -1,5 +1,6 @@
 package com.ipiecoles.java.java350.model;
 
+import com.ipiecoles.java.java350.exception.EmployeException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -86,4 +87,48 @@ class EmployeTest {
         Assertions.assertEquals(primeAnnuelle, prime);
 
     }
+
+    @Test
+    public void augmenterSalairebase() throws EmployeException {
+        //Given
+        Employe employe = new Employe();
+        double augmentation = 41.24;
+
+
+        //When
+        double pourcentage = employe.augmenterSalaire(augmentation);
+
+        //Then
+        //(100+41.24)/100
+        Assertions.assertEquals(1.4124, pourcentage);
+    }
+
+    @Test
+    public void augmenterSalaireNull() throws EmployeException {
+        //Given
+        Employe employe = new Employe();
+        double augmentation = 0D;
+
+
+        //When
+        EmployeException exception = Assertions.assertThrows(EmployeException.class, ()-> employe.augmenterSalaire(augmentation)) ;
+
+        //Then
+        Assertions.assertEquals("Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!", exception.getMessage());
+    }
+
+    @Test
+    public void augmenterSalaireSupA50() throws EmployeException {
+        //Given
+        Employe employe = new Employe();
+        double augmentation = 50.01;
+
+
+        //When
+        EmployeException exception = Assertions.assertThrows(EmployeException.class, ()-> employe.augmenterSalaire(augmentation)) ;
+
+        //Then
+        Assertions.assertEquals("Le pourcentage d'augmentation doit être inférieur ou égal à 50!", exception.getMessage());
+    }
+
 }
