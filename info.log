@@ -134,3 +134,49 @@
 11:52:28 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - DÃ©but d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activitÃ© de 1.0
 11:52:28 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - DÃ©but d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activitÃ© de 1.0
 11:52:28 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employÃ© de matricule T12345 existe dÃ©jÃ  en BDD
+11:53:38 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!
+11:53:38 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être inférieur ou égal à 50!
+11:53:38 [main] INFO  com.ipiecoles.java.java350.model.Employe          .getNbRtt                       - Calcul du nombre de RTT de l'année 2019 pour le salarié matriculé T44524
+11:53:38 [main] INFO  com.ipiecoles.java.java350.model.Employe          .getNbRtt                       - Calcul du nombre de RTT de l'année 2021 pour le salarié matriculé T44524
+11:53:38 [main] INFO  com.ipiecoles.java.java350.model.Employe          .getNbRtt                       - Calcul du nombre de RTT de l'année 2022 pour le salarié matriculé T44524
+11:53:38 [main] INFO  com.ipiecoles.java.java350.model.Employe          .getNbRtt                       - Calcul du nombre de RTT de l'année 2032 pour le salarié matriculé T44524
+11:53:38 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarting                    - Starting EmployeRepositoryTest on LH0MLPF1C4WRL with PID 3680 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+11:53:38 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+11:53:42 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarted                     - Started EmployeRepositoryTest in 3.917 seconds (JVM running for 6.106)
+11:53:42 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarting                    - Starting EmployeServiceIntegrationTest on LH0MLPF1C4WRL with PID 3680 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+11:53:42 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+11:53:44 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarted                     - Started EmployeServiceIntegrationTest in 1.132 seconds (JVM running for 7.495)
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 1.0
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de null et l'objectif de CA 30000
+11:53:44 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Le chiffre d'affaire traité ne peut être négatif ou null !
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé T24355 donc le CA est de 42000 et l'objectif de CA 50000
+11:53:44 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Le matricule ne peut être null et doit commencer par un C !
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 42000 et l'objectif de CA null
+11:53:44 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - L'objectif de chiffre d'affaire ne peut être négatif ou null !
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 25200 et l'objectif de CA 42000
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+11:53:44 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 37800 et l'objectif de CA 42000
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 42000 et l'objectif de CA 42000
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 46200 et l'objectif de CA 42000
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employé matriculé C24355 donc le CA est de 54600 et l'objectif de CA 42000
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+11:53:44 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+11:53:44 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD
+12:12:52 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 25200 et l'objectif de CA 42000
+12:12:52 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 37800 et l'objectif de CA 42000
+12:12:52 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 42000 et l'objectif de CA 42000
+12:12:52 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 46200 et l'objectif de CA 42000
+12:12:52 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 54600 et l'objectif de CA 42000
+12:14:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 25200 et l'objectif de CA 42000
+12:14:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 37800 et l'objectif de CA 42000
+12:14:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 42000 et l'objectif de CA 42000
+12:14:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 46200 et l'objectif de CA 42000
+12:14:17 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 54600 et l'objectif de CA 42000
+12:14:39 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 25200 et l'objectif de CA 42000
+12:14:39 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 37800 et l'objectif de CA 42000
+12:14:39 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 42000 et l'objectif de CA 42000
+12:14:39 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 46200 et l'objectif de CA 42000
+12:14:39 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .calculPerformanceCommercial    - Calcul de la performance de l'employÃ© matriculÃ© C24355 donc le CA est de 54600 et l'objectif de CA 42000

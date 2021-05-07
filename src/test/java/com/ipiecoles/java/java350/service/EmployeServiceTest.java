@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -183,16 +185,20 @@ class EmployeServiceTest {
         //Then
         Assertions.assertEquals("Le matricule ne peut être null et doit commencer par un C !", exception.getMessage());
     }
-
-    @Test
-    void calculPerformanceCommercialCasDefault() throws EmployeException {
+    @ParameterizedTest
+    @CsvSource({
+            "C24355, 4, 42000, 25200, 1",
+            "C24355, 4, 42000, 37800, 3",
+            "C24355, 4, 42000, 42000, 5",
+            "C24355, 4, 42000, 46200, 6",
+            "C24355, 4, 42000, 54600, 9",
+    })
+    void calculPerformanceCommercial(String matricule, int performance, Long objectifCa, Long caTraite, int expectedPerf) throws EmployeException {
         //Given
         Employe e = new Employe();
-        e.setMatricule("C24355");
-        e.setPerformance(4);
+        e.setMatricule(matricule);
+        e.setPerformance(performance);
         employeRepository.save(e);
-        Long objectifCa = 42000L;
-        Long caTraite = 25200L;
         Mockito.when(employeRepository.findByMatricule("C24355")).thenReturn(e);
         Mockito.when(employeRepository.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn(1.5);
 
@@ -204,96 +210,6 @@ class EmployeServiceTest {
 
         //Then
         Mockito.verify(employeRepository, times(2)).save(employe.capture());
-        Assertions.assertEquals(1, employe.getValue().getPerformance());
-    }
-
-    @Test
-    void calculPerformanceCommercialCas2() throws EmployeException {
-        //Given
-        Employe e = new Employe();
-        e.setMatricule("C24355");
-        e.setPerformance(4);
-        employeRepository.save(e);
-        Long objectifCa = 42000L;
-        Long caTraite = 37800L;
-        Mockito.when(employeRepository.findByMatricule("C24355")).thenReturn(e);
-        Mockito.when(employeRepository.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn(1.5);
-
-
-        //When
-        employeService.calculPerformanceCommercial(e.getMatricule(), caTraite, objectifCa);
-        //embaucheEmploye return void donc on passe par un ArgumentCaptor
-        ArgumentCaptor<Employe> employe = ArgumentCaptor.forClass(Employe.class);
-
-        //Then
-        Mockito.verify(employeRepository, times(2)).save(employe.capture());
-        Assertions.assertEquals(3, employe.getValue().getPerformance());
-    }
-    @Test
-    void calculPerformanceCommercialCas3() throws EmployeException {
-        //Given
-        Employe e = new Employe();
-        e.setMatricule("C24355");
-        e.setPerformance(4);
-        employeRepository.save(e);
-        Long objectifCa = 42000L;
-        Long caTraite = 42000L;
-        Mockito.when(employeRepository.findByMatricule("C24355")).thenReturn(e);
-        Mockito.when(employeRepository.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn(1.5);
-
-
-        //When
-        employeService.calculPerformanceCommercial(e.getMatricule(), caTraite, objectifCa);
-        //embaucheEmploye return void donc on passe par un ArgumentCaptor
-        ArgumentCaptor<Employe> employe = ArgumentCaptor.forClass(Employe.class);
-
-        //Then
-        Mockito.verify(employeRepository, times(2)).save(employe.capture());
-        Assertions.assertEquals(5, employe.getValue().getPerformance());
-    }
-
-    @Test
-    void calculPerformanceCommercialCas4() throws EmployeException {
-        //Given
-        Employe e = new Employe();
-        e.setMatricule("C24355");
-        e.setPerformance(4);
-        employeRepository.save(e);
-        Long objectifCa = 42000L;
-        Long caTraite = 46200L;
-        Mockito.when(employeRepository.findByMatricule("C24355")).thenReturn(e);
-        Mockito.when(employeRepository.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn(1.5);
-
-
-        //When
-        employeService.calculPerformanceCommercial(e.getMatricule(), caTraite, objectifCa);
-        //embaucheEmploye return void donc on passe par un ArgumentCaptor
-        ArgumentCaptor<Employe> employe = ArgumentCaptor.forClass(Employe.class);
-
-        //Then
-        Mockito.verify(employeRepository, times(2)).save(employe.capture());
-        Assertions.assertEquals(6, employe.getValue().getPerformance());
-    }
-
-    @Test
-    void calculPerformanceCommercialCas5() throws EmployeException {
-        //Given
-        Employe e = new Employe();
-        e.setMatricule("C24355");
-        e.setPerformance(4);
-        employeRepository.save(e);
-        Long objectifCa = 42000L;
-        Long caTraite = 54600L;
-        Mockito.when(employeRepository.findByMatricule("C24355")).thenReturn(e);
-        Mockito.when(employeRepository.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn(1.5);
-
-        //When
-        employeService.calculPerformanceCommercial(e.getMatricule(), caTraite, objectifCa);
-        //embaucheEmploye return void donc on passe par un ArgumentCaptor
-        ArgumentCaptor<Employe> employe = ArgumentCaptor.forClass(Employe.class);
-
-        //Then
-        Mockito.verify(employeRepository, times(2)).save(employe.capture());
-        Assertions.assertEquals(9, employe.getValue().getPerformance());
+        Assertions.assertEquals(expectedPerf, employe.getValue().getPerformance());
     }
 }
