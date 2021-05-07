@@ -11,12 +11,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import static org.mockito.Mockito.times;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -56,6 +60,26 @@ public class EmployeServiceIntegrationTest {
         Assertions.assertEquals("M01234", employe.getMatricule());
         Assertions.assertEquals(1.0, employe.getTempsPartiel().doubleValue());
         Assertions.assertEquals(1521.22, employe.getSalaire().doubleValue());
+    }
+
+    @Test
+    void testIntegrationCalculPerformanceCommercialCas2() throws EmployeException {
+        //Given
+        Employe e = new Employe();
+        e.setMatricule("C24355");
+        e.setPerformance(4);
+        employeRepository.save(e);
+        Long objectifCa = 42000L;
+        Long caTraite = 37800L;
+
+
+        //When
+        employeService.calculPerformanceCommercial(e.getMatricule(), caTraite, objectifCa);
+        //embaucheEmploye return void donc on passe par un ArgumentCaptor
+
+        //Then
+        Employe employe = employeRepository.findByMatricule("C24355");
+        Assertions.assertEquals(2, employe.getPerformance());
     }
 
 }
