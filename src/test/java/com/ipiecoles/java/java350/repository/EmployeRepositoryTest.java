@@ -89,7 +89,7 @@ class EmployeRepositoryTest {
         Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("M");
 
         //Then
-        Assertions.assertEquals(avgPerf, 2);
+        Assertions.assertEquals(2, avgPerf);
     }
 
 @Test
@@ -103,7 +103,7 @@ class EmployeRepositoryTest {
         Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("M");
 
         //Then
-        Assertions.assertEquals(avgPerf, 2.5);
+        Assertions.assertEquals(2.5, avgPerf);
     }
 
     @Test
@@ -115,7 +115,7 @@ class EmployeRepositoryTest {
         Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("T");
 
         //Then
-        Assertions.assertEquals(avgPerf, 1);
+        Assertions.assertEquals(1, avgPerf);
     }
 
 }

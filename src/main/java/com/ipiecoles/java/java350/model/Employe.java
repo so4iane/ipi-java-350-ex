@@ -49,11 +49,12 @@ public class Employe {
 
     /**
      * Méthode calculant le nombre d'années d'ancienneté à partir de la date d'embauche
+     *
      * @return
      */
     public Integer getNombreAnneeAnciennete() {
-        if(dateEmbauche!= null){
-            return Math.max((LocalDate.now().getYear() - dateEmbauche.getYear()),0);
+        if (dateEmbauche != null) {
+            return Math.max((LocalDate.now().getYear() - dateEmbauche.getYear()), 0);
         }
         return 0;
     }
@@ -62,7 +63,7 @@ public class Employe {
         return Entreprise.NB_CONGES_BASE + this.getNombreAnneeAnciennete();
     }
 
-    public Integer getNbRtt(){
+    public Integer getNbRtt() {
         return getNbRtt(LocalDate.now());
     }
 
@@ -73,13 +74,12 @@ public class Employe {
      * - Nombre de samedi et dimanche dans l'année - Nombre de jours fériés ne tombant pas le week-end
      * - Nombre de congés payés
      *
-     *
      * @param date la date à laquelle on souhaite connaître le nombre de jour RTT de l'année
-     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
      * @return le nombre de jour RTT sur l'année concernée;
+     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
      */
-    public Integer getNbRtt(LocalDate date){
-        logger.info("Calcul du nombre de RTT de l'année {} pour le salarié matriculé {}",date.getYear(),this.getMatricule());
+    public Integer getNbRtt(LocalDate date) {
+        logger.info("Calcul du nombre de RTT de l'année {} pour le salarié matriculé {}", date.getYear(), this.getMatricule());
         //Calcul du nombre de jour dans l'année (selon bisextile)
         int nbJAnnee = date.isLeapYear() ? 366 : 365;
 
@@ -87,19 +87,18 @@ public class Employe {
         int nbWeekends = 104;
 
         //Récupération du premier jour de l'année concernée pour connaître le nombre de weekend dans l'année
-        switch (LocalDate.of(date.getYear(),1,1).getDayOfWeek()){
+        switch (LocalDate.of(date.getYear(), 1, 1).getDayOfWeek()) {
             case THURSDAY:
                 logger.debug("L'année commence par un jeudi");
-                if(date.isLeapYear()){
+                if (date.isLeapYear()) {
                     nbWeekends += 1;
                 }
                 break;
             case FRIDAY:
                 logger.debug("L'année commence par un vendredi");
-                if(date.isLeapYear()) {
+                if (date.isLeapYear()) {
                     nbWeekends += 2;
-                }else
-                {
+                } else {
                     nbWeekends += 1;
                 }
                 break;
@@ -114,9 +113,7 @@ public class Employe {
                 localDate.getDayOfWeek().getValue() <= DayOfWeek.FRIDAY.getValue()).count();
 
         //Calcul du nombre de RTT dans l'année
-        int nbRTT = (int) Math.ceil((nbJAnnee - Entreprise.NB_JOURS_MAX_FORFAIT - nbWeekends - Entreprise.NB_CONGES_BASE - nbJFeries) * tempsPartiel);
-
-        return nbRTT;
+        return (int) Math.ceil((nbJAnnee - Entreprise.NB_JOURS_MAX_FORFAIT - nbWeekends - Entreprise.NB_CONGES_BASE - nbJFeries) * tempsPartiel);
     }
 
     /**
@@ -125,24 +122,24 @@ public class Employe {
      * Pour les autres employés, la prime de base plus éventuellement la prime de performance calculée si l'employé
      * n'a pas la performance de base, en multipliant la prime de base par un l'indice de performance
      * (égal à la performance à laquelle on ajoute l'indice de prime de base)
-     *
+     * <p>
      * Pour tous les employés, une prime supplémentaire d'ancienneté est ajoutée en multipliant le nombre d'année
      * d'ancienneté avec la prime d'ancienneté. La prime est calculée au pro rata du temps de travail de l'employé
      *
      * @return la prime annuelle de l'employé en Euros et cents
      */
     //Matricule, performance, date d'embauche, temps partiel, prime
-    public Double getPrimeAnnuelle(){
+    public Double getPrimeAnnuelle() {
         //Calcule de la prime d'ancienneté
         Double primeAnciennete = Entreprise.PRIME_ANCIENNETE * this.getNombreAnneeAnciennete();
         Double prime;
         //Prime du manager (matricule commençant par M) : Prime annuelle de base multipliée par l'indice prime manager
         //plus la prime d'anciennté.
-        if(matricule != null && matricule.startsWith("M")) {
+        if (matricule != null && matricule.startsWith("M")) {
             prime = Entreprise.primeAnnuelleBase() * Entreprise.INDICE_PRIME_MANAGER + primeAnciennete;
         }
         //Pour les autres employés en performance de base, uniquement la prime annuelle plus la prime d'ancienneté.
-        else if (this.performance == null || Entreprise.PERFORMANCE_BASE.equals(this.performance)){
+        else if (this.performance == null || Entreprise.PERFORMANCE_BASE.equals(this.performance)) {
             prime = Entreprise.primeAnnuelleBase() + primeAnciennete;
         }
         //Pour les employés plus performance, on bonnifie la prime de base en multipliant par la performance de l'employé
@@ -158,27 +155,27 @@ public class Employe {
      * Calcul de l'augmentation salaire selon la règle :
      * Un chiffre entre 0 et 50 est entré en paramètre et correspond à l'augmentation en % du salaire
      * Aucune augmentation ne peut-être supérieure à 50%, nulle ou négative
-     *
+     * <p>
      * Cette fonction renvoie le multiplicateur du salaire qui doit correspondre à l'augmentation
      * Ex : si pourcentage = 30, alors la fonction reverra (100+30)/100 = 1,3
      *
      * @param pourcentage le pourcentage duquel on souhaite augmenter l'employé
-     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
      * @return le mutipliateur d'augmentation;
+     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
      */
     //Augmenter salaire
     public double augmenterSalaire(double pourcentage) throws EmployeException {
         //Vérification de la validité de pourcentage
-        if(pourcentage<=0D){
+        if (pourcentage <= 0D) {
             logger.error("Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!");
             throw new EmployeException("Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!");
-        }else if(50D<pourcentage){
+        } else if (50D < pourcentage) {
             logger.error("Le pourcentage d'augmentation doit être inférieur ou égal à 50!");
             throw new EmployeException("Le pourcentage d'augmentation doit être inférieur ou égal à 50!");
         }
 
         //Calcul du multiplicateur d'augmentation
-        pourcentage = (100+pourcentage)/100;
+        pourcentage = (100 + pourcentage) / 100;
 
         return pourcentage;
     }

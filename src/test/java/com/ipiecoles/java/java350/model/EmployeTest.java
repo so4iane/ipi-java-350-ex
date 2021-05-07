@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeTest {
 
     @Test
-    public void getNombreAnneeAncienneteNow(){
+    void getNombreAnneeAncienneteNow(){
         //Given
         Employe employe = new Employe();
         employe.setDateEmbauche(LocalDate.now());
@@ -27,7 +27,7 @@ class EmployeTest {
     }
 
     @Test
-    public void getNombreAnneeAnciennetePast(){
+    void getNombreAnneeAnciennetePast(){
         //Given
         Employe employe = new Employe();
         employe.setDateEmbauche(LocalDate.now().minusYears(5L));
@@ -40,7 +40,7 @@ class EmployeTest {
     }
 
     @Test
-    public void getNombreAnneeAncienneteNull(){
+    void getNombreAnneeAncienneteNull(){
         //Given
         Employe employe = new Employe();
         employe.setDateEmbauche(null);
@@ -53,7 +53,7 @@ class EmployeTest {
     }
 
     @Test
-    public void getNombreAnneeAncienneteFuture(){
+    void getNombreAnneeAncienneteFuture(){
         //Given
         Employe employe = new Employe();
         employe.setDateEmbauche(LocalDate.now().plusYears(3L));
@@ -77,7 +77,7 @@ class EmployeTest {
             "1, 'M44488', 3, 1.0, 2000.0",
             "2, 'M44488', 5, 1.0, 2200.0"
     })
-    public void getPrimeAnnuelle(Integer performance, String matricule, Long nbYearsAnciennete, Double tempsPartiel, Double primeAnnuelle){
+    void getPrimeAnnuelle(Integer performance, String matricule, Long nbYearsAnciennete, Double tempsPartiel, Double primeAnnuelle){
         //Given
         Employe employe = new Employe("Nom", "Prénom", matricule, LocalDate.now().minusYears(nbYearsAnciennete), Entreprise.SALAIRE_BASE, performance, tempsPartiel);
 
@@ -90,7 +90,7 @@ class EmployeTest {
     }
 
     @Test
-    public void augmenterSalairebase() throws EmployeException {
+    void augmenterSalairebase() throws EmployeException {
         //Given
         Employe employe = new Employe();
         double augmentation = 41.24;
@@ -105,7 +105,7 @@ class EmployeTest {
     }
 
     @Test
-    public void augmenterSalaireNull() throws EmployeException {
+    void augmenterSalaireNull() throws EmployeException {
         //Given
         Employe employe = new Employe();
         double augmentation = 0D;
@@ -119,7 +119,7 @@ class EmployeTest {
     }
 
     @Test
-    public void augmenterSalaireSupA50() throws EmployeException {
+    void augmenterSalaireSupA50() throws EmployeException {
         //Given
         Employe employe = new Employe();
         double augmentation = 50.01;
@@ -139,7 +139,7 @@ class EmployeTest {
             "2022, 1.0, 10",
             "2032, 1.0, 11",
     })
-    public void getNbRtt(Integer year ,Double tempsPartiel, Integer RTT){
+    void getNbRtt(Integer year ,Double tempsPartiel, Integer RTT){
         //Given
         Employe employe = new Employe("Neymar", "Jean", "T44524",LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE, 1, tempsPartiel);
         LocalDate date = LocalDate.of(year,1,1);
