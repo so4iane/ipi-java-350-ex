@@ -111,6 +111,7 @@ public class EmployeService {
         //Recherche de l'employé dans la base
         Employe employe = employeRepository.findByMatricule(matricule);
         if(employe == null){
+            logger.error("Le matricule " + matricule + " n'existe pas !");
             throw new EmployeException("Le matricule " + matricule + " n'existe pas !");
         }
 
@@ -136,6 +137,7 @@ public class EmployeService {
         //Calcul de la performance moyenne
         Double performanceMoyenne = employeRepository.avgPerformanceWhereMatriculeStartsWith("C");
         if(performanceMoyenne != null && performance > performanceMoyenne){
+            logger.info("L'employé a dépassé la performance moyenne");
             performance++;
         }
 
