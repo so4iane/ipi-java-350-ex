@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -149,6 +150,39 @@ class EmployeTest {
 
         //Then
         Assertions.assertEquals(RTT, totalRTT);
+
+    }
+
+    //Test pour coverage 100%
+    @Test
+    void getNbRttNow(){
+        //Given
+        Employe employe = new Employe("Neymar", "Jean", "T44524",LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE, 1, 0.5);
+
+        //When
+        Integer totalRTT = employe.getNbRtt();
+
+        //Then (Valable qu'en 2021)
+        Assertions.assertEquals(5,totalRTT);
+    }
+
+    //Test pour coverage 100%
+    @ParameterizedTest
+    @CsvSource({
+            "1, 26",
+            "4, 29",
+            "0, 25",
+            "2, 27",
+    })
+    void getNbConges(Integer anciennete, Integer nbConges){
+        //Given
+        Employe employe = new Employe("Neymar", "Jean", "T44524",LocalDate.now().minusYears(anciennete), Entreprise.SALAIRE_BASE, 1, 0.5);
+
+        //When
+        int totalConges = employe.getNbConges();
+
+        //Then
+        Assertions.assertEquals(nbConges, totalConges);
 
     }
 
