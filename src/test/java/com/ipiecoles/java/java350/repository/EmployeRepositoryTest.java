@@ -65,4 +65,57 @@ class EmployeRepositoryTest {
         //Then
         Assertions.assertNull(matricule);
     }
+
+    @Test
+    void avgPerformanceWhereMatriculeStartsWithtestNoEmploye() {
+        //Given
+        //Nothing to test null
+
+        //When
+        Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("C");
+
+        //Then
+        Assertions.assertNull(avgPerf);
+    }
+
+    @Test
+    void avgPerformanceWhereMatriculeStartsWithSameEmployeType() {
+        //Given
+        employeRepository.save(new Employe("Neymar", "Jean","M00123", LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE,1,1.0));
+        employeRepository.save(new Employe("Bruel", "Patrick","M00123", LocalDate.now(), Entreprise.SALAIRE_BASE,2,0.5));
+        employeRepository.save(new Employe("Dulac", "Jeanne","M00123", LocalDate.now().plusYears(2), Entreprise.SALAIRE_BASE,3,1.0));
+
+        //When
+        Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("M");
+
+        //Then
+        Assertions.assertEquals(avgPerf, 2);
+    }
+
+@Test
+    void avgPerformanceWhereMatriculeStartsWithDifferentEmployeType() {
+        //Given
+        employeRepository.save(new Employe("Neymar", "Jean","T00123", LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE,1,1.0));
+        employeRepository.save(new Employe("Bruel", "Patrick","M00123", LocalDate.now(), Entreprise.SALAIRE_BASE,2,0.5));
+        employeRepository.save(new Employe("Dulac", "Jeanne","M00123", LocalDate.now().plusYears(2), Entreprise.SALAIRE_BASE,3,1.0));
+
+        //When
+        Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("M");
+
+        //Then
+        Assertions.assertEquals(avgPerf, 2.5);
+    }
+
+    @Test
+    void avgPerformanceWhereMatriculeStartsWithOneEmploye() {
+        //Given
+        employeRepository.save(new Employe("Neymar", "Jean","T00123", LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE,1,1.0));
+
+        //When
+        Double avgPerf = employeRepository.avgPerformanceWhereMatriculeStartsWith("T");
+
+        //Then
+        Assertions.assertEquals(avgPerf, 1);
+    }
+
 }
