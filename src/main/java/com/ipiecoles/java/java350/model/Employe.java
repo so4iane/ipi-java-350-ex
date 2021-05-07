@@ -66,19 +66,56 @@ public class Employe {
         return getNbRtt(LocalDate.now());
     }
 
-    public Integer getNbRtt(LocalDate d){
-        int i1 = d.isLeapYear() ? 365 : 366;int var = 104;
-        switch (LocalDate.of(d.getYear(),1,1).getDayOfWeek()){
-        case THURSDAY: if(d.isLeapYear()) var =  var + 1; break;
-        case FRIDAY:
-        if(d.isLeapYear()) var =  var + 2;
-        else var =  var + 1;
-case SATURDAY:var = var + 1;
-                    break;
+
+    /**
+     * Calcul ddu nombre de RTT selon la règle :
+     * Nombre de jours dans l'année - Nombre de jours travaillés dans l'année en plein temps
+     * - Nombre de samedi et dimanche dans l'année - Nombre de jours fériés ne tombant pas le week-end
+     * - Nombre de congés payés
+     *
+     *
+     * @param date la date à laquelle on souhaite connaître le nombre de jour RTT de l'année
+     * @throws EmployeException si la valeur entrée n'est pas comprise entre 0 et 50, non nulle et non négative
+     * @return le nombre de jour RTT sur l'année concernée;
+     */
+    public Integer getNbRtt(LocalDate date){
+        //Calcul du nombre de jour dans l'année (selon bisextile)
+        int nbJAnnee = date.isLeapYear() ? 366 : 365;
+
+        //Calcul nombre de samedis et dimanches par année
+        int nbWeekends = 104;
+
+        //Récupération du premier jour de l'année concernée pour connaître le nombre de weekend dans l'année
+        switch (LocalDate.of(date.getYear(),1,1).getDayOfWeek()){
+            case THURSDAY:
+                logger.debug("L'année commence par un jeudi");
+                if(date.isLeapYear()){
+                    nbWeekends += 1;
+                }
+                break;
+            case FRIDAY:
+                logger.debug("L'année commence par un vendredi");
+                if(date.isLeapYear()) {
+                    nbWeekends += 2;
+                }else
+                {
+                    nbWeekends += 1;
+                }
+                break;
+            case SATURDAY:
+                logger.debug("L'année commence par un samedi");
+                nbWeekends += 1;
+                break;
         }
-        int monInt = (int) Entreprise.joursFeries(d).stream().filter(localDate ->
+
+        //Calcul du nombre de jours feriés par année
+        int nbJFeries = (int) Entreprise.joursFeries(date).stream().filter(localDate ->
                 localDate.getDayOfWeek().getValue() <= DayOfWeek.FRIDAY.getValue()).count();
-        return (int) Math.ceil((i1 - Entreprise.NB_JOURS_MAX_FORFAIT - var - Entreprise.NB_CONGES_BASE - monInt) * tempsPartiel);
+
+        //Calcul du nombre de RTT dans l'année
+        int nbRTT = (int) Math.ceil((nbJAnnee - Entreprise.NB_JOURS_MAX_FORFAIT - nbWeekends - Entreprise.NB_CONGES_BASE - nbJFeries) * tempsPartiel);
+
+        return nbRTT;
     }
 
     /**
@@ -140,7 +177,7 @@ case SATURDAY:var = var + 1;
         }
 
         //Calcul du multiplicateur d'augmentation
-         pourcentage = (100+pourcentage)/100;
+        pourcentage = (100+pourcentage)/100;
 
         return pourcentage;
     }

@@ -28,3 +28,51 @@
 08:45:48 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD
 09:36:43 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit Ãªtre supÃ©rieur Ã  0 et ne peut-Ãªtre nÃ©gatif!
 09:36:51 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit Ãªtre infÃ©rieur ou Ã©gal Ã  50!
+09:38:08 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!
+09:38:08 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être inférieur ou égal à 50!
+09:38:09 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarting                    - Starting EmployeRepositoryTest on LH0MLPF1C4WRL with PID 16376 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+09:38:09 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+09:38:14 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarted                     - Started EmployeRepositoryTest in 4.555 seconds (JVM running for 6.932)
+09:38:14 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarting                    - Starting EmployeServiceIntegrationTest on LH0MLPF1C4WRL with PID 16376 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+09:38:14 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+09:38:15 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarted                     - Started EmployeServiceIntegrationTest in 1.312 seconds (JVM running for 8.651)
+09:38:15 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 1.0
+09:38:16 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+09:38:16 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+09:38:16 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+09:38:16 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
+09:38:16 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+09:38:16 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+09:38:16 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD
+10:08:40 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!
+10:08:40 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être inférieur ou égal à 50!
+10:08:41 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarting                    - Starting EmployeRepositoryTest on LH0MLPF1C4WRL with PID 624 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+10:08:41 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+10:08:46 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarted                     - Started EmployeRepositoryTest in 4.784 seconds (JVM running for 7.369)
+10:08:46 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarting                    - Starting EmployeServiceIntegrationTest on LH0MLPF1C4WRL with PID 624 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+10:08:46 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+10:08:47 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarted                     - Started EmployeServiceIntegrationTest in 1.254 seconds (JVM running for 9.149)
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 1.0
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+10:08:48 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:08:48 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:08:48 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD
+10:36:51 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être supérieur à 0 et ne peut-être négatif!
+10:36:51 [main] ERROR com.ipiecoles.java.java350.model.Employe          .augmenterSalaire               - Le pourcentage d'augmentation doit être inférieur ou égal à 50!
+10:36:52 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarting                    - Starting EmployeRepositoryTest on LH0MLPF1C4WRL with PID 10068 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+10:36:52 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+10:36:56 [main] INFO  c.i.java.java350.repository.EmployeRepositoryTest .logStarted                     - Started EmployeRepositoryTest in 3.91 seconds (JVM running for 6.06)
+10:36:56 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarting                    - Starting EmployeServiceIntegrationTest on LH0MLPF1C4WRL with PID 10068 (started by E007548 in C:\Users\E007548\Documents\Cours\Qualite logiciel\ipi-java-350-ex)
+10:36:56 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStartupProfileInfo          - No active profile set, falling back to default profiles: default
+10:36:57 [main] INFO  c.i.j.j.service.EmployeServiceIntegrationTest     .logStarted                     - Started EmployeServiceIntegrationTest in 0.889 seconds (JVM running for 7.215)
+10:36:57 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 1.0
+10:36:57 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+10:36:57 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:36:57 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de MANAGER avec un taux d'activité de 0.5
+10:36:58 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Limite des 100000 matricules atteinte !
+10:36:58 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:36:58 [main] INFO  com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - Début d'embauche pour Jean au poste de TECHNICIEN avec un taux d'activité de 1.0
+10:36:58 [main] ERROR com.ipiecoles.java.java350.service.EmployeService .embaucheEmploye                - L'employé de matricule T12345 existe déjà en BDD

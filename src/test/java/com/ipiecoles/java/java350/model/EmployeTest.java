@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -129,6 +130,26 @@ class EmployeTest {
 
         //Then
         Assertions.assertEquals("Le pourcentage d'augmentation doit être inférieur ou égal à 50!", exception.getMessage());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "2019, 1.0, 8",
+            "2021, 0.5, 5",
+            "2022, 1.0, 10",
+            "2032, 1.0, 11",
+    })
+    public void getNbRtt(Integer year ,Double tempsPartiel, Integer RTT){
+        //Given
+        Employe employe = new Employe("Neymar", "Jean", "T44524",LocalDate.now().minusYears(2), Entreprise.SALAIRE_BASE, 1, tempsPartiel);
+        LocalDate date = LocalDate.of(year,1,1);
+
+        //When
+        Integer totalRTT = employe.getNbRtt(date);
+
+        //Then
+        Assertions.assertEquals(RTT, totalRTT);
+
     }
 
 }
